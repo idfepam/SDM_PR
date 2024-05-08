@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Patient File</title>
+</head>
+<body>
+  <h2>Update Patient Information</h2>
+
+  <form action="/update_patient" method="POST">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ patient[1] }}" required>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" value="{{ patient[2] }}" required>
+    <label for="doctor">Doctor:</label>
+    <input type="text" id="doctor" name="doctor" value="{{ patient[4] }}" required>
+
+    <label for="diagnosis">Diagnosis:</label>
+    <textarea id="diagnosis" name="diagnosis" rows="4">{{ clinical_data[2] }}</textarea>
+
+    <input type="hidden" name="patient_id" value="{{ patient[0] }}">
+    <label for="treatment">Treatment:</label>
+    <textarea id="treatment" name="treatment" rows="4">{{ clinical_data[3] }}</textarea>
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>

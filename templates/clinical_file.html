@@ -1,0 +1,15 @@
+<html>
+<head><title>Clinical File</title></head>
+<body>
+    <h1>Clinical File: {{ patient[1] }}</h1>
+    <p><strong>Age:</strong> {{ patient[2] }}</p>  <p><strong>Doctor:</strong> {{ patient[4]}}</p>
+    <p><strong>Diagnosis:</strong> {{ clinical_data[2] }}</p>
+    <p><strong>Treatment:</strong> {{ clinical_data[3] }}</p>
+    <p><strong>Last Temperature:</strong> {{ last_vitals[0] }}°C</p>
+    <p><strong>Last Blood Pressure:</strong> {{ last_vitals[1] }}</p>
+    <form action="/update_patient_form" method="POST">
+        <input type="hidden" name="patient_id" value="{{ patient[0] }}">
+        <button type="submit">Update File</button>
+    </form>
+</body>
+</html>
